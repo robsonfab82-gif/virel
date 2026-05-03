@@ -57,7 +57,7 @@ export default function DashboardHome() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-black text-white">Bom dia, João! 👋</h1>
+        <h1 className="text-2xl font-black text-white">Bom dia! 👋</h1>
         <p className="text-white/50 mt-1">Aqui está o resumo do seu perfil hoje</p>
       </div>
 

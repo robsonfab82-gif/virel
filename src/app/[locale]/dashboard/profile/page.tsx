@@ -43,7 +43,7 @@ export default function ProfilePage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-black text-white">Análise de Perfil</h1>
-          <p className="text-white/50 mt-1">Score detalhado do seu @joaosilva</p>
+          <p className="text-white/50 mt-1">Score detalhado do seu perfil</p>
         </div>
         <Button variant="secondary" onClick={refresh} loading={loading} size="sm">
           <RefreshCw size={16} />

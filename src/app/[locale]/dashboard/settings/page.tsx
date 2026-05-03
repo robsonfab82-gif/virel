@@ -22,8 +22,8 @@ const planInfo: Record<string, { label: string; color: string; variant: "success
 };
 
 export default function SettingsPage() {
-  const [name, setName] = useState("João Silva");
-  const [email, setEmail] = useState("joao@email.com");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [language, setLanguage] = useState("pt-BR");
   const currentPlan = "pro";
 
