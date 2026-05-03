@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   Palette,
@@ -266,7 +266,7 @@ function FallbackModal({
 
 // ─── Main component ───────────────────────────────────────────
 
-export default function BrandPage() {
+function BrandPage() {
   const searchParams = useSearchParams();
   const [profile, setProfile] = useState<BrandProfile>(DEFAULT_PROFILE);
   const [saved, setSaved] = useState(false);
@@ -1142,5 +1142,14 @@ export default function BrandPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Wrapper with Suspense for useSearchParams
+export default function BrandPageWrapper() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-virel-dark flex items-center justify-center"><div className="text-white">Carregando...</div></div>}>
+      <BrandPage />
+    </Suspense>
   );
 }
