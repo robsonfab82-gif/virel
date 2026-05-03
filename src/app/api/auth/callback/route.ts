@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
 
 export async function GET(request: NextRequest) {
   const requestUrl = new URL(request.url);
@@ -6,10 +7,11 @@ export async function GET(request: NextRequest) {
   const next = requestUrl.searchParams.get("next") ?? "/pt-BR/dashboard";
 
   if (code) {
-    // In production: exchange code for session with Supabase
-    // const supabase = createServerClient();
-    // await supabase.auth.exchangeCodeForSession(code);
-    return NextResponse.redirect(new URL(next, requestUrl.origin));
+    const supabase = createSupabaseServerClient();
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    if (!error) {
+      return NextResponse.redirect(new URL(next, requestUrl.origin));
+    }
   }
 
   return NextResponse.redirect(new URL("/pt-BR/login?error=auth_failed", requestUrl.origin));
