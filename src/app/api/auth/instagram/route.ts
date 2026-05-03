@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
  * Usa www.facebook.com/dialog/oauth — NÃO api.instagram.com (descontinuado).
  * Quando INSTAGRAM_APP_ID não estiver configurado, retorna 503 com instruções.
  */
-export async function GET(request: NextRequest) {
+export async function GET(_request: NextRequest) {
   const appId = process.env.INSTAGRAM_APP_ID;
   const redirectUri =
     process.env.INSTAGRAM_REDIRECT_URI ||

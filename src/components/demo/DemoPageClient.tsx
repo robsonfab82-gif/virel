@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { Play, Video } from "lucide-react";
+import { Video } from "lucide-react";
 import { loadBlob, loadVideoMeta, createBlobURL, revokeBlobURL } from "@/lib/storage";
 
 const VIDEO_KEY = "virel_demo_video";
