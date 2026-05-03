@@ -500,7 +500,6 @@ export default function BrandPage() {
   const inputAiCls = aiFilledFields
     ? "w-full bg-virel-dark border border-green-500/40 rounded-xl px-4 py-2.5 text-white text-sm placeholder-white/30 focus:outline-none focus:border-virel-purple-500 transition-colors"
     : inputCls;
-  const selectCls = inputCls + " appearance-none cursor-pointer";
   const selectAiCls = inputAiCls + " appearance-none cursor-pointer";
 
   const totalProgress = analyzing
