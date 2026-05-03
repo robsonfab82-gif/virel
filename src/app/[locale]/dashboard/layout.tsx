@@ -1,5 +1,5 @@
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
+import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { Sidebar } from "@/components/layout/Sidebar";
 
@@ -15,10 +15,18 @@ export default async function DashboardLayout({
   const messages = await getMessages() as Record<string, Record<string, string>>;
 
   // Fetch real user from Supabase
-  const cookieStore = cookies();
-  const supabase = createServerComponentClient({
-    cookies: () => cookieStore,
-  });
+  const cookieStore = await cookies();
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll();
+        },
+      },
+    }
+  );
 
   const { data: { user } } = await supabase.auth.getUser();
 
