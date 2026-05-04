@@ -6,16 +6,16 @@ import { formatNumber } from "@/lib/utils";
 const metrics = [
   {
     label: "Seguidores",
-    value: 12400,
-    growth: 5.2,
+    value: 0,
+    growth: 0,
     icon: Users,
     color: "text-virel-purple-400",
     bg: "bg-virel-purple-500/10",
   },
   {
     label: "Engajamento",
-    value: "4.8%",
-    growth: 1.3,
+    value: "0%",
+    growth: 0,
     icon: TrendingUp,
     color: "text-virel-blue-400",
     bg: "bg-virel-blue-500/10",
@@ -23,16 +23,16 @@ const metrics = [
   },
   {
     label: "Posts",
-    value: 127,
-    growth: -2.1,
+    value: 0,
+    growth: 0,
     icon: BarChart3,
     color: "text-green-400",
     bg: "bg-green-500/10",
   },
   {
     label: "Score",
-    value: "82/100",
-    growth: 3.5,
+    value: "0/100",
+    growth: 0,
     icon: Star,
     color: "text-yellow-400",
     bg: "bg-yellow-500/10",
@@ -40,15 +40,9 @@ const metrics = [
   },
 ];
 
-const recentActivities = [
-  { text: "Score do perfil atualizado: 82/100", time: "Agora mesmo", type: "score" },
-  { text: "12 novas hashtags geradas para fitness", time: "2 horas atrás", type: "hashtag" },
-  { text: "3 legendas virais criadas", time: "4 horas atrás", type: "caption" },
-  { text: "Análise de concorrentes concluída", time: "1 dia atrás", type: "analysis" },
-  { text: "Planejamento semanal criado", time: "2 dias atrás", type: "planner" },
-];
+const recentActivities: any[] = [];
 
-const weeklyData = [45, 52, 38, 65, 71, 55, 82];
+const weeklyData = [0, 0, 0, 0, 0, 0, 0];
 const days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
 
 export default function DashboardHome() {
