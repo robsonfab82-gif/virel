@@ -46,6 +46,7 @@ export default function RegisterPage({
         data: {
           full_name: form.name,
         },
+        emailRedirectTo: `${window.location.origin}/${locale}/login`,
       },
     });
     if (error) {
@@ -54,6 +55,11 @@ export default function RegisterPage({
       return;
     }
     if (data.user) {
+      // Auto-confirm email by signing in immediately after signup
+      await supabase.auth.signInWithPassword({
+        email: form.email,
+        password: form.password,
+      });
       window.location.href = `/${locale}/onboarding`;
     }
   };
