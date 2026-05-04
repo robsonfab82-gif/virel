@@ -8,13 +8,13 @@ import { Input } from "@/components/ui/Input";
 
 const users: { id: string; name: string; email: string; instagram: string; plan: string; status: string; date: string; mrr: number }[] = [];
 
-const statusBadge = {
-  active: "success" as const,
-  trialing: "warning" as const,
-  suspended: "error" as const,
+const statusBadge: Record<string, "success" | "warning" | "error"> = {
+  active: "success",
+  trialing: "warning",
+  suspended: "error",
 };
 
-const statusLabels = { active: "Ativo", trialing: "Trial", suspended: "Suspenso" };
+const statusLabels: Record<string, string> = { active: "Ativo", trialing: "Trial", suspended: "Suspenso" };
 
 export default function AdminUsersPage() {
   const [search, setSearch] = useState("");
