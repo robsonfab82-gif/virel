@@ -32,7 +32,7 @@ export default function AdminDashboardPage() {
                 <div>
                   <p className="text-white/50 text-sm">{stat.label}</p>
                   <p className="text-2xl font-black text-white mt-1">
-                    {stat.isString ? stat.value : formatNumber(stat.value)}
+                    {stat.isString ? stat.value : formatNumber(stat.value as number)}
                   </p>
                 </div>
                 <div className={`p-2 rounded-lg ${stat.bg}`}>
