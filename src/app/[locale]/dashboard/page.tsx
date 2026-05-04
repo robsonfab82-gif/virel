@@ -40,7 +40,7 @@ const metrics = [
   },
 ];
 
-const recentActivities: any[] = [];
+const recentActivities: { text: string; time: string; type: string }[] = [];
 
 const weeklyData = [0, 0, 0, 0, 0, 0, 0];
 const days = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sáb", "Dom"];
