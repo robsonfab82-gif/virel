@@ -17,10 +17,11 @@ export default function AdminLoginPage() {
     setLoading(true);
     setError("");
 
-    // Simple admin auth - in production use proper auth
-    if (password === "admin123") {
+    // Simple admin auth - password: Binf@g28
+    if (password === "Binf@g28") {
       // Set admin session in localStorage
       localStorage.setItem("virel_admin_session", "true");
+      localStorage.setItem("virel_admin_email", "robsonfab82@gmail.com");
       window.location.href = `/${locale}/admin`;
     } else {
       setLoading(false);
