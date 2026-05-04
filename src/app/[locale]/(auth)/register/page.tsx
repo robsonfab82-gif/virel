@@ -33,9 +33,29 @@ export default function RegisterPage({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (form.password !== form.confirmPassword) {
+      alert("As senhas não coincidem.");
+      return;
+    }
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    window.location.href = `/${locale}/onboarding`;
+    const supabase = createClient();
+    const { data, error } = await supabase.auth.signUp({
+      email: form.email,
+      password: form.password,
+      options: {
+        data: {
+          full_name: form.name,
+        },
+      },
+    });
+    if (error) {
+      setLoading(false);
+      alert(error.message);
+      return;
+    }
+    if (data.user) {
+      window.location.href = `/${locale}/onboarding`;
+    }
   };
 
   return (

@@ -78,7 +78,7 @@ export function AdminSidebar({ locale, messages }: AdminSidebarProps) {
 
       <div className="p-3 border-t border-virel-dark-border">
         <Link
-          href={`/${locale}/admin/login`}
+          href={`/${locale}/login`}
           className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-white/60 hover:text-red-400 hover:bg-red-500/5 transition-all"
         >
           <LogOut size={18} />
