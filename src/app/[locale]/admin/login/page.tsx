@@ -54,7 +54,6 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Digite a senha"
-              icon={<Lock size={18} />}
               required
             />
 
