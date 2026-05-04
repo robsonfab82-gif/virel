@@ -38,30 +38,34 @@ export default function RegisterPage({
       return;
     }
     setLoading(true);
-    const supabase = createClient();
-    const { data, error } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-      options: {
-        data: {
-          full_name: form.name,
-        },
-        emailRedirectTo: `${window.location.origin}/${locale}/login`,
-      },
-    });
-    if (error) {
-      setLoading(false);
-      alert(error.message);
-      return;
-    }
-    if (data.user) {
-      // Auto-confirm email by signing in immediately after signup
-      await supabase.auth.signInWithPassword({
+    
+    // Use API route to create user with confirmed email
+    const res = await fetch("/api/auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
         email: form.email,
         password: form.password,
-      });
-      window.location.href = `/${locale}/onboarding`;
+        name: form.name,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      setLoading(false);
+      alert(data.error || "Erro ao criar conta");
+      return;
     }
+
+    // Auto-login after registration
+    const supabase = createClient();
+    await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
+    
+    window.location.href = `/${locale}/onboarding`;
   };
 
   return (
