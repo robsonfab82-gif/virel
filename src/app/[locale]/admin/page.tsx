@@ -10,7 +10,7 @@ const stats = [
   { label: "Conversão", value: "0%", growth: 0, icon: TrendingUp, color: "text-virel-blue-400", bg: "bg-virel-blue-500/10", isString: true },
 ];
 
-const recentUsers: any[] = [];
+const recentUsers: { name: string; email: string; status: string; date: string }[] = [];
 
 export default function AdminDashboardPage() {
   return (

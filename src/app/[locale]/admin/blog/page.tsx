@@ -6,8 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Modal } from "@/components/ui/Modal";
-import { MOCK_POSTS } from "@/lib/blog";
-import type { BlogPost } from "@/lib/blog";
+import { BlogPost } from "@/lib/blog";
 
 const STORAGE_KEY = "virel_blog_posts";
 

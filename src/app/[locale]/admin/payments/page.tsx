@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
-const payments: any[] = [];
+const payments: { id: string; user: string; email: string; plan: string; amount: number; status: string; date: string }[] = [];
 
 const statusBadge = {
   paid: "success" as const,

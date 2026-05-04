@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
-const users: any[] = [];
+const users: { id: string; name: string; email: string; instagram: string; plan: string; status: string; date: string; mrr: number }[] = [];
 
 const statusBadge = {
   active: "success" as const,

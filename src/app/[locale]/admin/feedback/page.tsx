@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Star, MessageSquare } from "lucide-react";
 
-const feedbacks: any[] = [];
+const feedbacks: { id: string; user: string; email: string; rating: number; category: string; message: string; date: string; replied: boolean }[] = [];
 
 const categoryColor: Record<string, "success" | "warning" | "error" | "info" | "purple"> = {
   Elogio: "success",
