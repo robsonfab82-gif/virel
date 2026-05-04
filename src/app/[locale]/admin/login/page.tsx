@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { Lock } from "lucide-react";
 
 export default function AdminLoginPage() {
   const { locale } = useParams() as { locale: string };
