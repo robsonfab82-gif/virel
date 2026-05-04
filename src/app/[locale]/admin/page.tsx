@@ -4,10 +4,10 @@ import { Badge } from "@/components/ui/Badge";
 import { formatNumber } from "@/lib/utils";
 
 const stats = [
-  { label: "Total de Usuários", value: 0, growth: 0, icon: Users, color: "text-virel-purple-400", bg: "bg-virel-purple-500/10" },
-  { label: "MRR", value: "R$0", growth: 0, icon: DollarSign, color: "text-green-400", bg: "bg-green-500/10", isString: true },
-  { label: "Churn", value: "0%", growth: 0, icon: TrendingDown, color: "text-red-400", bg: "bg-red-500/10", isString: true, invertGrowth: true },
-  { label: "Conversão", value: "0%", growth: 0, icon: TrendingUp, color: "text-virel-blue-400", bg: "bg-virel-blue-500/10", isString: true },
+  { label: "Total de Usuários", value: 0 as number | string, growth: 0, icon: Users, color: "text-virel-purple-400", bg: "bg-virel-purple-500/10" },
+  { label: "MRR", value: "R$0" as number | string, growth: 0, icon: DollarSign, color: "text-green-400", bg: "bg-green-500/10", isString: true },
+  { label: "Churn", value: "0%" as number | string, growth: 0, icon: TrendingDown, color: "text-red-400", bg: "bg-red-500/10", isString: true, invertGrowth: true },
+  { label: "Conversão", value: "0%" as number | string, growth: 0, icon: TrendingUp, color: "text-virel-blue-400", bg: "bg-virel-blue-500/10", isString: true },
 ];
 
 const recentUsers: { name: string; email: string; status: string; date: string }[] = [];
