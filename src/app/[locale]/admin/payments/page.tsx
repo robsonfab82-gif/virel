@@ -3,13 +3,13 @@ import { Badge } from "@/components/ui/Badge";
 
 const payments: { id: string; user: string; email: string; plan: string; amount: number; status: string; date: string }[] = [];
 
-const statusBadge = {
-  paid: "success" as const,
-  pending: "warning" as const,
-  failed: "error" as const,
+const statusBadge: Record<string, "success" | "warning" | "error"> = {
+  paid: "success",
+  pending: "warning",
+  failed: "error",
 };
 
-const statusLabels = { paid: "Pago", pending: "Pendente", failed: "Falhou" };
+const statusLabels: Record<string, string> = { paid: "Pago", pending: "Pendente", failed: "Falhou" };
 
 const totalMRR = payments.filter((p) => p.status === "paid").reduce((acc, p) => acc + p.amount, 0);
 
