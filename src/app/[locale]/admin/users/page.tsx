@@ -6,16 +6,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 
-const users = Array.from({ length: 15 }, (_, i) => ({
-  id: `u${i + 1}`,
-  name: ["Ana Beatriz", "Carlos Lima", "Mariana Costa", "Pedro Rocha", "Juliana Alves", "Roberto Silva", "Camila Dias", "Fernando Gomes", "Lucia Oliveira", "Miguel Santos", "Isabel Ferreira", "Diego Costa", "Beatriz Lima", "Rafael Souza", "Tatiana Mendes"][i],
-  email: `user${i + 1}@email.com`,
-  instagram: `@user${i + 1}`,
-  plan: ["Start", "Pro", "Ultra", "Pro", "Start", "Pro", "Ultra", "Start", "Pro", "Pro", "Start", "Ultra", "Pro", "Start", "Pro"][i],
-  status: ["active", "active", "active", "trialing", "active", "suspended", "active", "active", "trialing", "active", "active", "active", "trialing", "active", "active"][i] as "active" | "trialing" | "suspended",
-  date: `0${(i % 9) + 1} Mai 2026`,
-  mrr: [47, 97, 197, 97, 47, 97, 197, 47, 97, 97, 47, 197, 97, 47, 97][i],
-}));
+const users: any[] = [];
 
 const statusBadge = {
   active: "success" as const,

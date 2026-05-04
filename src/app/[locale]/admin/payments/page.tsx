@@ -1,15 +1,7 @@
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 
-const payments = Array.from({ length: 12 }, (_, i) => ({
-  id: `pay_${i + 1000}`,
-  user: ["Ana Beatriz", "Carlos Lima", "Mariana Costa", "Pedro Rocha", "Juliana Alves", "Roberto Silva", "Camila Dias", "Fernando Gomes", "Lucia Oliveira", "Miguel Santos", "Isabel Ferreira", "Diego Costa"][i],
-  email: `user${i + 1}@email.com`,
-  plan: ["Pro", "Start", "Ultra", "Pro", "Start", "Pro", "Ultra", "Start", "Pro", "Pro", "Start", "Ultra"][i],
-  amount: [97, 47, 197, 97, 47, 97, 197, 47, 97, 97, 47, 197][i],
-  status: ["paid", "paid", "paid", "pending", "paid", "paid", "failed", "paid", "paid", "paid", "paid", "paid"][i] as "paid" | "pending" | "failed",
-  date: `0${(i % 9) + 1}/05/2026`,
-}));
+const payments: any[] = [];
 
 const statusBadge = {
   paid: "success" as const,

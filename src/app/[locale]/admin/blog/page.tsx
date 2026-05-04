@@ -53,11 +53,10 @@ export default function AdminBlogPage() {
       if (stored) {
         setPosts(JSON.parse(stored));
       } else {
-        setPosts(MOCK_POSTS);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(MOCK_POSTS));
+        setPosts([]);
       }
     } catch {
-      setPosts(MOCK_POSTS);
+      setPosts([]);
     }
   }, []);
 
