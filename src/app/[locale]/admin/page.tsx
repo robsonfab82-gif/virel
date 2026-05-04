@@ -100,7 +100,7 @@ export default function AdminDashboardPage() {
                 <div className="h-2 bg-virel-dark-border rounded-full overflow-hidden">
                   <div className={`h-full ${plan.color} rounded-full`} style={{ width: "0%" }} />
                 </div>
-              </div㸾
+              </div>
             ))}
           </div>
         </Card>
