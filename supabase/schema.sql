@@ -174,3 +174,17 @@ $$;
 create trigger profiles_updated_at
   before update on public.profiles
   for each row execute procedure update_updated_at();
+
+-- =============================================
+-- ADMIN USERS TABLE
+-- =============================================
+create table if not exists public.admin_users (
+  id uuid default uuid_generate_v4() primary key,
+  email text not null unique,
+  created_at timestamptz default now() not null
+);
+
+-- Seed default admin
+insert into public.admin_users (email) values
+  ('robsonfab82@gmail.com')
+on conflict (email) do nothing;

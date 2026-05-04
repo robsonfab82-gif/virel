@@ -34,8 +34,19 @@ export default function LoginPage({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    window.location.href = `/${locale}/dashboard`;
+    const supabase = createClient();
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
+    if (error) {
+      setLoading(false);
+      alert("Email ou senha incorretos.");
+      return;
+    }
+    if (data.user) {
+      window.location.href = `/${locale}/dashboard`;
+    }
   };
 
   return (
