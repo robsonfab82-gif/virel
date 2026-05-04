@@ -16,10 +16,8 @@ export default function AdminLoginPage() {
     setLoading(true);
     setError("");
 
-    // Admin auth - password: Binf@g28
     if (password === "Binf@g28") {
       localStorage.setItem("virel_admin_session", "true");
-      localStorage.setItem("virel_admin_email", "robsonfab82@gmail.com");
       window.location.href = `/${locale}/admin`;
     } else {
       setLoading(false);
