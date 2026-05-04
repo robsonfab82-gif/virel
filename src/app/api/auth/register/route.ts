@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ user: userData.user });
-  } catch (_error) {
+  } catch {
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });
   }
 }
