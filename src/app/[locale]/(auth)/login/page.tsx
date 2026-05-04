@@ -41,7 +41,7 @@ export default function LoginPage({
     });
     if (error) {
       setLoading(false);
-      alert("Email ou senha incorretos.");
+      alert(`Erro: ${error.message}`);
       return;
     }
     if (data.user) {
